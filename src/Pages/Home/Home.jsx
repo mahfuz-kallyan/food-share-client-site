@@ -1,6 +1,7 @@
 import Banner from "./Banner";
 import FeaturedFoods from "./FeaturedFoods";
 import NewFoods from "./NewFoods";
+import Subscribe from "./Subscribe";
 
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
             <Banner></Banner>
             <FeaturedFoods></FeaturedFoods>
             <NewFoods></NewFoods>
+            <Subscribe></Subscribe>
         </div>
     );
 };
