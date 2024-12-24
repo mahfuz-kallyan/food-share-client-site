@@ -7,34 +7,52 @@ const Banner = () => {
 		<div className="mx-auto relative">
 			<div className="carousel w-full">
 				<div id="slide1" className="carousel-item relative w-full">
-					<img src={image1} className="w-full" />
+					<img src={image1} className="w-full object-cover" />
 					<div className="absolute top-3/4 left-8 gap-4 lg:left-5 lg:right-5 flex -translate-y-1/2 transform lg:justify-between">
-						<a href="#slide3" className="btn btn-circle">
+						<a
+							href="#slide3"
+							className="btn btn-circle hover:bg-[#94c341] border-none"
+						>
 							❮
 						</a>
-						<a href="#slide2" className="btn btn-circle">
+						<a
+							href="#slide2"
+							className="btn btn-circle hover:bg-[#94c341] border-none"
+						>
 							❯
 						</a>
 					</div>
 				</div>
 				<div id="slide2" className="carousel-item relative w-full">
-					<img src={image2} className="w-full" />
+					<img src={image2} className="w-full object-cover" />
 					<div className="absolute top-3/4 left-8 gap-4 lg:left-5 lg:right-5 flex -translate-y-1/2 transform lg:justify-between">
-						<a href="#slide1" className="btn btn-circle">
+						<a
+							href="#slide1"
+							className="btn btn-circle hover:bg-[#94c341] border-none"
+						>
 							❮
 						</a>
-						<a href="#slide3" className="btn btn-circle">
+						<a
+							href="#slide3"
+							className="btn btn-circle hover:bg-[#94c341] border-none"
+						>
 							❯
 						</a>
 					</div>
 				</div>
 				<div id="slide3" className="carousel-item relative w-full">
-					<img src={image3} className="w-full" />
+					<img src={image3} className="w-full object-cover" />
 					<div className="absolute top-3/4 left-8 gap-4 lg:left-5 lg:right-5 flex -translate-y-1/2 transform lg:justify-between">
-						<a href="#slide2" className="btn btn-circle">
+						<a
+							href="#slide2"
+							className="btn btn-circle hover:bg-[#94c341] border-none"
+						>
 							❮
 						</a>
-						<a href="#slide1" className="btn btn-circle">
+						<a
+							href="#slide1"
+							className="btn btn-circle hover:bg-[#94c341] border-none"
+						>
 							❯
 						</a>
 					</div>
