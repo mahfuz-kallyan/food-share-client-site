@@ -1,6 +1,21 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import AuthContext from "../Context/AuthContext/AuthContext";
 
 const Navbar = () => {
+	const { user, signOutUser } = useContext(AuthContext);
+
+	const handleSignOut = () => {
+		signOutUser()
+			.then(() => {
+			console.log('successful signout ');
+			})
+			.catch(err => {
+			console.log(err.message)
+			
+		})
+	}
+
 	const links = (
 		<div className="lg:flex justify-center items-center gap-2">
 			<li className="text-white font-medium">
@@ -8,6 +23,9 @@ const Navbar = () => {
 			</li>
 			<li className="text-white font-medium">
 				<NavLink to={"/available"}>Available Foods</NavLink>
+			</li>
+			<li className="text-white font-medium">
+				<NavLink to={"/addFood"}>Add Foods</NavLink>
 			</li>
 		</div>
 	);
@@ -52,8 +70,26 @@ const Navbar = () => {
 					<ul className="menu menu-horizontal px-1">{links}</ul>
 				</div>
 				<div className="navbar-end gap-2">
-					<Link to={"/login"} className="btn text-[#94c341]">Login</Link>
-					<Link to={"/register"} className="btn text-[#94c341]">Register</Link>
+					{user ? (
+						<button
+							onClick={handleSignOut}
+							className="btn text-[#94c341]"
+						>
+							Logout
+						</button>
+					) : (
+						<div className="flex gap-2">
+							<Link to={"/login"} className="btn text-[#94c341]">
+								Login
+							</Link>
+							<Link
+								to={"/register"}
+								className="btn text-[#94c341]"
+							>
+								Register
+							</Link>
+						</div>
+					)}
 				</div>
 			</div>
 		</div>

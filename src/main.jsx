@@ -5,22 +5,25 @@ import { RouterProvider } from "react-router-dom";
 import router from './Router/Router.jsx';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AuthProvider from './Context/AuthContext/AuthProvider.jsx';
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
-		<RouterProvider router={router} />
-		<ToastContainer
-			position="top-center"
-			autoClose={3000}
-			hideProgressBar={false}
-			newestOnTop={false}
-			closeOnClick
-			rtl={false}
-			pauseOnFocusLoss
-			draggable
-			pauseOnHover
-			theme="colored"
-			transition:Bounce
-		/>
+		<AuthProvider>
+			<RouterProvider router={router} />
+			<ToastContainer
+				position="top-center"
+				autoClose={3000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="colored"
+				transition:Bounce
+			/>
+		</AuthProvider>
 	</StrictMode>
 );
