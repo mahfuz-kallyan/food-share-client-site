@@ -8,6 +8,19 @@ const AddFoods = () => {
         const initialData = Object.fromEntries(formData.entries());
         console.log(initialData);
         
+        fetch('', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(initialData)
+            
+        })
+            .then(res => res.json())
+            .then(data => {
+            console.log(data);
+            
+        })
     }
 
     return (
