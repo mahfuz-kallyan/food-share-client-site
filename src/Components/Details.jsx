@@ -1,34 +1,50 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
-const FoodsCard = ({ food }) => {
-    const navigate = useNavigate()
-	const {
+const Details = () => {
+    const foods = useLoaderData()
+
+    const {
 		foodName,
 		foodImage,
 		foodQuantity,
 		notes,
+		donator,
 		pickupLocation,
 		expireDateTime,
-        foodStatus,
-        _id
-    } = food;
+		foodStatus,
+		_id,
+    } = foods;
     
-    const handleDetails = () => {
-        navigate(`/details/${_id}`)
-    }
-
-	return (
-		<div>
-			<div className="card card-compact bg-base-100 w-96 shadow-xl">
+    return (
+		<div className="mx-auto space-y-12">
+			<h2 className="text-4xl font-semibold text-center my-8">
+				Food Details
+			</h2>
+			<div className="card card-compact bg-base-100 w-4/6 shadow-xl mx-auto">
 				<figure>
 					<img
-						className="w-96 aspect-[0.75] object-cover hover:scale-110 transition-all duration-500"
+						className=" aspect-[0.75] object-cover hover:scale-110 transition-all duration-500"
 						src={foodImage}
 						alt="Shoes"
 					/>
 				</figure>
-				<div className="card-body space-y-2">
+				<div className="mt-3 flex justify-between items-center px-6">
+					<div className="flex items-center gap-2">
+						<img
+							className="w-16 rounded-lg"
+							src={donator.image}
+							alt=""
+						/>
+						<p className="text-lg font-semibold text-[#94c341]">
+							{donator.name}
+						</p>
+					</div>
+					<p className="text-xl font-medium text-[#94c341]">
+						{donator.email}
+					</p>
+				</div>
+				<div className="card-body space-y-2 px-6 mt-4">
 					<h2 className="card-title">{foodName}</h2>
 					<p className="text-xl font-medium">
 						Notes:{" "}
@@ -61,7 +77,7 @@ const FoodsCard = ({ food }) => {
 						</span>
 					</p>
 					<div className="card-actions justify-center py-3">
-						<button onClick={handleDetails} className="btn bg-[#94c341]">
+						<button className="btn bg-[#94c341]">
 							View Details
 						</button>
 					</div>
@@ -71,4 +87,4 @@ const FoodsCard = ({ food }) => {
 	);
 };
 
-export default FoodsCard;
+export default Details;

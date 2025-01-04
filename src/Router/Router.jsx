@@ -1,4 +1,4 @@
-import { createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import MainLayouts from "../Layouts/MainLayouts";
 import Error from "../Pages/Error";
 import Home from "../Pages/Home/Home";
@@ -6,6 +6,7 @@ import AvailableFoods from "../Pages/AvailableFoods";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import AddFoods from "../Pages/AddFoods";
+import Details from "../Components/Details";
 
 const router = createBrowserRouter([
 	{
@@ -21,6 +22,15 @@ const router = createBrowserRouter([
 				path: "/available",
 				element: <AvailableFoods></AvailableFoods>,
 				loader: () => fetch("http://localhost:5000/foods"),
+			},
+			{
+				path: "/details/:id",
+				element: <Details></Details>,
+                loader: async ({ params }) => {
+                    const res = await fetch("http://localhost:5000/foods")
+                    const data = await res.json();
+                    return data?.find(item => item?._id === params.id)
+                }
 			},
 			{
 				path: "/addFood",
