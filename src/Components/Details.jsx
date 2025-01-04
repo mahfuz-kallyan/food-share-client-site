@@ -4,16 +4,18 @@ import { useLoaderData } from 'react-router-dom';
 const Details = () => {
     const foods = useLoaderData()
 
-    const {
-		foodName,
-		foodImage,
-		foodQuantity,
+   const {
+		name,
+		photo,
+		quantity,
 		notes,
-		donator,
-		pickupLocation,
-		expireDateTime,
-		foodStatus,
-		_id,
+		location,
+		expireDate,
+       status,
+       donator,
+       image,
+        email,
+        _id
     } = foods;
     
     return (
@@ -25,7 +27,7 @@ const Details = () => {
 				<figure>
 					<img
 						className=" aspect-[0.75] object-cover hover:scale-110 transition-all duration-500"
-						src={foodImage}
+						src={photo}
 						alt="Shoes"
 					/>
 				</figure>
@@ -33,19 +35,19 @@ const Details = () => {
 					<div className="flex items-center gap-2">
 						<img
 							className="w-16 rounded-lg"
-							src={donator.image}
+							src={image}
 							alt=""
 						/>
 						<p className="text-lg font-semibold text-[#94c341]">
-							{donator.name}
+							{donator}
 						</p>
 					</div>
 					<p className="text-xl font-medium text-[#94c341]">
-						{donator.email}
+						{email}
 					</p>
 				</div>
 				<div className="card-body space-y-2 px-6 mt-4">
-					<h2 className="card-title">{foodName}</h2>
+					<h2 className="card-title">{name}</h2>
 					<p className="text-xl font-medium">
 						Notes:{" "}
 						<span className="text-[#94c341] font-semibold">
@@ -55,25 +57,25 @@ const Details = () => {
 					<p className="text-xl font-medium">
 						Quantity:{" "}
 						<span className="text-[#94c341] font-semibold">
-							{foodQuantity}
+							{quantity}
 						</span>
 					</p>
 					<p className="text-xl font-medium">
 						PickUp Location:{" "}
 						<span className="text-[#94c341] font-semibold">
-							{pickupLocation}
+							{location}
 						</span>
 					</p>
 					<p className="text-xl font-medium">
 						Date:{" "}
 						<span className="text-[#94c341] font-semibold">
-							{expireDateTime}
+							{expireDate}
 						</span>
 					</p>
 					<p className="text-xl font-medium">
 						Food Status:{" "}
 						<span className="text-[#94c341] font-semibold">
-							{foodStatus}
+							{status}
 						</span>
 					</p>
 					<div className="card-actions justify-center py-3">

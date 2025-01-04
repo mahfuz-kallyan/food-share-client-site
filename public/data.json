@@ -1,142 +1,125 @@
 [
 	{
-		"foodName": "Pan Cake",
-		"foodImage": "https://i.ibb.co.com/1dSykpd/photorealistic-pancakes-with-raspberries.jpg",
-		"foodQuantity": "3",
-		"pickupLocation": "45 Maple St",
-		"expireDateTime": "2025-01-15",
+		"name": "Pan Cake",
+		"photo": "https://i.ibb.co.com/1dSykpd/photorealistic-pancakes-with-raspberries.jpg",
+		"quantity": "3",
+		"location": "45 Maple St",
+		"expireDate": "2025-01-15",
 		"notes": "Freshly baked. Contains nuts.",
-		"donator": {
-			"name": "John Smith",
-			"image": "https://i.ibb.co.com/7pJ18DG/portrait-indigenous-person-integrated-into-modern-life.jpg",
-			"email": "john@example.com"
-		},
-		"foodStatus": "available"
+		"donator": "John Smith",
+		"image": "https://i.ibb.co.com/7pJ18DG/portrait-indigenous-person-integrated-into-modern-life.jpg",
+		"email": "john@example.com",
+		"status": "available"
 	},
 	{
-		"foodName": "Pizza",
-		"foodImage": "https://i.ibb.co.com/gwX86W6/delicious-seafood-shrimps-mussels-pizza-black-wooden-table-italian-food-top-view.jpg",
-		"foodQuantity": "2 Liters",
-		"pickupLocation": "12 Rose Ave",
-		"expireDateTime": "2025-01-10",
+		"name": "Pizza",
+		"photo": "https://i.ibb.co.com/gwX86W6/delicious-seafood-shrimps-mussels-pizza-black-wooden-table-italian-food-top-view.jpg",
+		"quantity": "2 Liters",
+		"location": "12 Rose Ave",
+		"expireDate": "2025-01-10",
 		"notes": "Medium spicy.",
-		"donator": {
-			"name": "Emily Davis",
-			"image": "https://i.ibb.co.com/2nGZVRq/man-looking-picture-album-front-view.jpg",
-			"email": "emily@example.com"
-		},
-		"foodStatus": "available"
+		"donator": "Emily Davis",
+		"image": "https://i.ibb.co.com/2nGZVRq/man-looking-picture-album-front-view.jpg",
+		"email": "emily@example.com",
+		"status": "available"
 	},
 	{
-		"foodName": "Vegetable Pasta",
-		"foodImage": "https://i.ibb.co.com/4mFffdw/well-done-steak-homemade-potatoes-1.jpg",
-		"foodQuantity": "5 Boxes",
-		"pickupLocation": "22 Greenway Blvd",
-		"expireDateTime": "2025-01-12",
+		"name": "Vegetable Pasta",
+		"photo": "https://i.ibb.co.com/4mFffdw/well-done-steak-homemade-potatoes-1.jpg",
+		"quantity": "5 Boxes",
+		"location": "22 Greenway Blvd",
+		"expireDate": "2025-01-12",
 		"notes": "Vegan.",
-		"donator": {
-			"name": "Robert Brown",
-			"image": "https://i.ibb.co.com/P4C2DPj/thoughtful-creative-male-journalist-writer-biting-pencil-holding-notebook-writing-schedule-look-thin.jpg",
-			"email": "robert@example.com"
-		},
-		"foodStatus": "available"
+
+		"donator": "Robert Brown",
+		"image": "https://i.ibb.co.com/P4C2DPj/thoughtful-creative-male-journalist-writer-biting-pencil-holding-notebook-writing-schedule-look-thin.jpg",
+		"email": "robert@example.com",
+
+		"status": "available"
 	},
 	{
-		"foodName": "Grilled Salmon",
-		"foodImage": "https://i.ibb.co.com/MgQFFKN/big-sandwich-hamburger-burger-with-beef-red-onion-tomato-fried-bacon-1.jpg",
-		"foodQuantity": "6 Portions",
-		"pickupLocation": "90 Ocean Dr",
-		"expireDateTime": "2025-01-11",
+		"name": "Grilled Salmon",
+		"photo": "https://i.ibb.co.com/MgQFFKN/big-sandwich-hamburger-burger-with-beef-red-onion-tomato-fried-bacon-1.jpg",
+		"quantity": "6 Portions",
+		"location": "90 Ocean Dr",
+		"expireDate": "2025-01-11",
 		"notes": "Lightly seasoned.",
-		"donator": {
-			"name": "Sarah White",
-			"image": "https://i.ibb.co.com/xsmNP00/portrait-jesus-doing-contemporary-things-modern-world.jpg",
-			"email": "sarah@example.com"
-		},
-		"foodStatus": "available"
+		"donator": "Sarah White",
+		"image": "https://i.ibb.co.com/xsmNP00/portrait-jesus-doing-contemporary-things-modern-world.jpg",
+		"email": "sarah@example.com",
+
+		"status": "available"
 	},
 	{
-		"foodName": "Chocolate Cake",
-		"foodImage": "https://i.ibb.co.com/hDCWvhh/view-tasty-shawarma-dish.jpg",
-		"foodQuantity": "2 Cakes",
-		"pickupLocation": "33 River Rd",
-		"expireDateTime": "2025-01-20",
+		"name": "Chocolate Cake",
+		"photo": "https://i.ibb.co.com/hDCWvhh/view-tasty-shawarma-dish.jpg",
+		"quantity": "2 Cakes",
+		"location": "33 River Rd",
+		"expireDate": "2025-01-20",
 		"notes": "Contains gluten and dairy.",
-		"donator": {
-			"name": "David Clark",
-			"image": "https://i.ibb.co.com/0Chhg1P/man-drinks-whiskey-businessman-reads-documents-director-shirt-suspenders.jpg",
-			"email": "david@example.com"
-		},
-		"foodStatus": "available"
+		"donator": "David Clark",
+		"image": "https://i.ibb.co.com/0Chhg1P/man-drinks-whiskey-businessman-reads-documents-director-shirt-suspenders.jpg",
+		"email": "david@example.com",
+		"status": "available"
 	},
 	{
-		"foodName": "Fried Rice",
-		"foodImage": "https://i.ibb.co.com/C8pt6H6/chicken-skewers-with-slices-sweet-peppers-dill.jpg",
-		"foodQuantity": "4 Boxes",
-		"pickupLocation": "10 Elm St",
-		"expireDateTime": "2025-01-08",
+		"name": "Fried Rice",
+		"photo": "https://i.ibb.co.com/C8pt6H6/chicken-skewers-with-slices-sweet-peppers-dill.jpg",
+		"quantity": "4 Boxes",
+		"location": "10 Elm St",
+		"expireDate": "2025-01-08",
 		"notes": "Gluten-free.",
-		"donator": {
-			"name": "Olivia King",
-			"image": "https://i.ibb.co.com/v4RyV4J/464147955-8487545028004299-8136653558500164182-n.jpg",
-			"email": "olivia@example.com"
-		},
-		"foodStatus": "available"
+		"donator": "Olivia King",
+		"image": "https://i.ibb.co.com/v4RyV4J/464147955-8487545028004299-8136653558500164182-n.jpg",
+		"email": "olivia@example.com",
+		"status": "available"
 	},
 	{
-		"foodName": "Beef Stew",
-		"foodImage": "https://i.ibb.co.com/PQS6KrT/meat-dish-with-vegetables.jpg",
-		"foodQuantity": "2 Gallons",
-		"pickupLocation": "55 Lakeview Rd",
-		"expireDateTime": "2025-01-13",
+		"name": "Beef Stew",
+		"photo": "https://i.ibb.co.com/PQS6KrT/meat-dish-with-vegetables.jpg",
+		"quantity": "2 Gallons",
+		"location": "55 Lakeview Rd",
+		"expireDate": "2025-01-13",
 		"notes": "Slow-cooked, hearty.",
-		"donator": {
-			"name": "James Wilson",
-			"image": "https://i.ibb.co.com/9hypMX6/462471969-8401216599970476-3250183171366796597-n.jpg",
-			"email": "james@example.com"
-		},
-		"foodStatus": "available"
+		"donator": "James Wilson",
+		"image": "https://i.ibb.co.com/9hypMX6/462471969-8401216599970476-3250183171366796597-n.jpg",
+		"email": "james@example.com",
+		"status": "available"
 	},
 	{
-		"foodName": "Fruit Salad",
-		"foodImage": "https://i.ibb.co.com/mz1mbKM/meat-dish-with-vegetables-1.jpg",
-		"foodQuantity": "7 Bowls",
-		"pickupLocation": "70 Pine St",
-		"expireDateTime": "2025-01-09",
+		"name": "Fruit Salad",
+		"photo": "https://i.ibb.co.com/mz1mbKM/meat-dish-with-vegetables-1.jpg",
+		"quantity": "7 Bowls",
+		"location": "70 Pine St",
+		"expireDate": "2025-01-09",
 		"notes": "Seasonal fruits.",
-		"donator": {
-			"name": "Mia Johnson",
-			"image": "https://i.ibb.co.com/vmCVyQs/backpacker-standing-sunrise-viewpoint-ja-bo-village-mae-hong-son-province-thailand.jpg",
-			"email": "mia@example.com"
-		},
-		"foodStatus": "available"
+		"donator": "Mia Johnson",
+		"image": "https://i.ibb.co.com/vmCVyQs/backpacker-standing-sunrise-viewpoint-ja-bo-village-mae-hong-son-province-thailand.jpg",
+		"email": "mia@example.com",
+		"status": "available"
 	},
 	{
-		"foodName": "Vegan Pizza",
-		"foodImage": "https://i.ibb.co.com/3pCgNSd/kimchi-ready-eat-bowl.jpg",
-		"foodQuantity": "3 Large",
-		"pickupLocation": "15 Broadway Ave",
-		"expireDateTime": "2025-01-07",
+		"name": "Vegan Pizza",
+		"photo": "https://i.ibb.co.com/3pCgNSd/kimchi-ready-eat-bowl.jpg",
+		"quantity": "3 Large",
+		"location": "15 Broadway Ave",
+		"expireDate": "2025-01-07",
 		"notes": "Contains soy cheese.",
-		"donator": {
-			"name": "Daniel Harris",
-			"image": "https://i.ibb.co.com/bmjXX7x/young-shirtless-male-with-backpack-standing-mountain-taking-picture-cloudy-sky.jpg",
-			"email": "daniel@example.com"
-		},
-		"foodStatus": "available"
+		"donator": "Daniel Harris",
+		"image": "https://i.ibb.co.com/bmjXX7x/young-shirtless-male-with-backpack-standing-mountain-taking-picture-cloudy-sky.jpg",
+		"email": "daniel@example.com",
+		"status": "available"
 	},
 	{
-		"foodName": "Pumpkin Soup",
-		"foodImage": "https://i.ibb.co.com/Wx36qRz/sauteed-mushrooms-with-pumpkin-sweet-pepper.jpg",
-		"foodQuantity": "8 Cups",
-		"pickupLocation": "40 Sunset Blvd",
-		"expireDateTime": "2025-01-18",
+		"name": "Pumpkin Soup",
+		"photo": "https://i.ibb.co.com/Wx36qRz/sauteed-mushrooms-with-pumpkin-sweet-pepper.jpg",
+		"quantity": "8 Cups",
+		"location": "40 Sunset Blvd",
+		"expireDate": "2025-01-18",
 		"notes": "Dairy-free.",
-		"donator": {
-			"name": "Sophia Martinez",
-			"image": "https://i.ibb.co.com/jyfCD7b/caucasian-woman-with-drone-her-hand-sitting-green-rocky-hill-with-sky.jpg",
-			"email": "sophia@example.com"
-		},
-		"foodStatus": "available"
+		"donator": "Sophia Martinez",
+		"image": "https://i.ibb.co.com/jyfCD7b/caucasian-woman-with-drone-her-hand-sitting-green-rocky-hill-with-sky.jpg",
+		"email": "sophia@example.com",
+		"status": "available"
 	}
 ]

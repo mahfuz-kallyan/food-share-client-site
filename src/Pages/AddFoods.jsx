@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const AddFoods = () => {
 
@@ -8,25 +9,33 @@ const AddFoods = () => {
         const initialData = Object.fromEntries(formData.entries());
         console.log(initialData);
         
-        fetch('', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(initialData)
-            
-        })
-            .then(res => res.json())
-            .then(data => {
-            console.log(data);
-            
-        })
+        fetch("http://localhost:5000/foods", {
+			method: "POST",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify(initialData),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+                if (data.insertedId) {
+                    Swal.fire({
+						position: "top-end",
+						icon: "success",
+						title: "Added Food Successfully",
+						showConfirmButton: false,
+						timer: 1500,
+					});
+                }
+			});
     }
 
     return (
 		<div className="mx-auto">
-			<h2 className="text-3xl">Add Foods</h2>
-			<div>
+			<h2 className="text-4xl font-semibold text-center my-6">
+				Add Foods
+			</h2>
+			<div className="w-10/12 mx-auto">
 				<form onSubmit={handleAddFood} className="card-body">
 					<div className="form-control">
 						<label className="label">
@@ -146,7 +155,7 @@ const AddFoods = () => {
 						></textarea>
 					</div>
 					<div className="form-control mt-6">
-						<button className="btn btn-primary">Add Food</button>
+						<button className="btn text-white text-lg bg-[#94c341]">Add Food</button>
 					</div>
 				</form>
 			</div>
