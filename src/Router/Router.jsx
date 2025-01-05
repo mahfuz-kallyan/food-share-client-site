@@ -7,6 +7,8 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import AddFoods from "../Pages/AddFoods";
 import Details from "../Components/Details";
+import PrivateRoute from "./PrivateRoute";
+import RequestFoods from "../Pages/RequestFoods";
 
 const router = createBrowserRouter([
 	{
@@ -26,15 +28,23 @@ const router = createBrowserRouter([
 			{
 				path: "/details/:id",
 				element: <Details></Details>,
-                loader: async ({ params }) => {
-                    const res = await fetch("http://localhost:5000/foods")
-                    const data = await res.json();
-                    return data?.find(item => item?._id === params.id)
-                }
+				loader: async ({ params }) => {
+					const res = await fetch("http://localhost:5000/foods");
+					const data = await res.json();
+					return data?.find((item) => item?._id === params.id);
+				},
 			},
 			{
 				path: "/addFood",
-				element: <AddFoods></AddFoods>,
+				element: (
+					<PrivateRoute>
+						<AddFoods></AddFoods>
+					</PrivateRoute>
+				),
+			},
+			{
+				path: "/requestFood",
+				element: <RequestFoods></RequestFoods>,
 			},
 			{
 				path: "/login",

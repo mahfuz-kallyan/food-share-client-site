@@ -27,6 +27,9 @@ const Navbar = () => {
 			<li className="text-white font-medium">
 				<NavLink to={"/addFood"}>Add Foods</NavLink>
 			</li>
+			<li className="text-white font-medium">
+				<NavLink to={"/requestFood"}>My Request</NavLink>
+			</li>
 		</div>
 	);
 

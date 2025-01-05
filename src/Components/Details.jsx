@@ -1,24 +1,34 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useState } from "react";
+import { useLoaderData } from "react-router-dom";
+import RequestModal from "./Request";
 
 const Details = () => {
-    const foods = useLoaderData()
+	const foods = useLoaderData();
+	const [isModalOpen, setIsModalOpen] = useState(false);
 
-   const {
+	const {
 		name,
 		photo,
 		quantity,
 		notes,
 		location,
 		expireDate,
-       status,
-       donator,
-       image,
-        email,
-        _id
-    } = foods;
-    
-    return (
+		status,
+		donator,
+		image,
+		email,
+		_id,
+	} = foods;
+
+	const openModal = () => {
+		setIsModalOpen(true);
+	};
+
+	const closeModal = () => {
+		setIsModalOpen(false);
+	};
+
+	return (
 		<div className="mx-auto space-y-12">
 			<h2 className="text-4xl font-semibold text-center my-8">
 				Food Details
@@ -26,9 +36,9 @@ const Details = () => {
 			<div className="card card-compact bg-base-100 w-4/6 shadow-xl mx-auto">
 				<figure>
 					<img
-						className=" aspect-[0.75] object-cover hover:scale-110 transition-all duration-500"
+						className="aspect-[0.75] object-cover hover:scale-110 transition-all duration-500"
 						src={photo}
-						alt="Shoes"
+						alt={name}
 					/>
 				</figure>
 				<div className="mt-3 flex justify-between items-center px-6">
@@ -36,7 +46,7 @@ const Details = () => {
 						<img
 							className="w-16 rounded-lg"
 							src={image}
-							alt=""
+							alt="Donator"
 						/>
 						<p className="text-lg font-semibold text-[#94c341]">
 							{donator}
@@ -79,12 +89,19 @@ const Details = () => {
 						</span>
 					</p>
 					<div className="card-actions justify-center py-3">
-						<button className="btn bg-[#94c341]">
-							View Details
+						<button
+							onClick={openModal}
+							className="btn bg-[#94c341]"
+						>
+							Request Food
 						</button>
 					</div>
 				</div>
 			</div>
+
+			{isModalOpen && (
+				<RequestModal food={foods} closeModal={closeModal} />
+			)}
 		</div>
 	);
 };
