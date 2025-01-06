@@ -30,6 +30,9 @@ const Navbar = () => {
 			<li className="text-white font-medium">
 				<NavLink to={"/requestFood"}>My Request</NavLink>
 			</li>
+			<li className="text-white font-medium">
+				<NavLink to={"/manageFoods"}>Manage Foods</NavLink>
+			</li>
 		</div>
 	);
 

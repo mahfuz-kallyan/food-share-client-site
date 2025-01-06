@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import AuthContext from '../Context/AuthContext/AuthContext';
 
 const AddFoods = () => {
 	const navigate = useNavigate()
+	const { user } = useContext(AuthContext);
 
     const handleAddFood = (e) => {
         e.preventDefault();
@@ -28,7 +30,7 @@ const AddFoods = () => {
 						showConfirmButton: false,
 						timer: 1500,
 					});
-					navigate("/available");
+					navigate("/manageFoods");
                 }
 			});
     }
@@ -140,7 +142,7 @@ const AddFoods = () => {
 							<span className="label-text">Donator Email</span>
 						</label>
 						<input
-							type="email"
+							type="email" defaultValue={user?.email}
 							placeholder="email"
 							name="email"
 							className="input input-bordered border-[#94c341]"
