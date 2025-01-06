@@ -76,6 +76,18 @@ const Navbar = () => {
 					<ul className="menu menu-horizontal px-1">{links}</ul>
 				</div>
 				<div className="navbar-end gap-2">
+					{user && (
+						<div className="mb-2">
+							<img
+								className="w-12 h-12 rounded-full mb-2 relative translate-y-1"
+								src={user?.photoURL}
+								alt="User Photo"
+							/>
+							<div className="absolute left-0 bottom-[-30px] hidden group-hover:block bg-gray-700 text-white text-sm rounded px-2 py-1">
+								{user?.displayName}
+							</div>
+						</div>
+					)}
 					{user ? (
 						<button
 							onClick={handleSignOut}
