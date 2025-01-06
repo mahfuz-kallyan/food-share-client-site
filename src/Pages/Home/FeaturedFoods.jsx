@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const FeaturedFoods = () => {
 	const [foods, setFoods] = useState([]);
-	const navigate = useNavigate()
 	
 
 	useEffect(() => {
@@ -14,9 +13,6 @@ const FeaturedFoods = () => {
 		)
 	}, [])
 
-	 const handleDetails = () => {
-			navigate(`/details/${_id}`);
-		};
 
     return (
 		<div className="mx-auto py-14 flex flex-col justify-center">
@@ -75,12 +71,6 @@ const FeaturedFoods = () => {
 								</span>
 							</p>
 							<div className="card-actions justify-center py-3">
-								<button
-									onClick={handleDetails}
-									className="btn bg-[#94c341]"
-								>
-									View Details
-								</button>
 							</div>
 						</div>
 					</div>

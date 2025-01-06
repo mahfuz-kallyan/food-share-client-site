@@ -1,8 +1,13 @@
 import image1 from "../../assets/images/front-view-delicious-soup-served-with-lemon-green-white-bowl-wooden-tray-vegetables-foods-oil-bottle-spices-black-table.jpg";
 import image2 from "../../assets/images/thai-food-tom-yum-kung-river-prawn-spicy-soup.jpg";
 import image3 from "../../assets/images/bowl-dal-with-side-curry-sauce.jpg";
+import { toast } from "react-toastify";
 
 const Banner = () => {
+
+	const handleMore = () => {
+		toast.success('Please visit on available page')
+	}
 	return (
 		<div className="mx-auto relative">
 			<div className="carousel w-full">
@@ -58,7 +63,7 @@ const Banner = () => {
 					</div>
 				</div>
 			</div>
-			<div className=" w-11/12 md:w-2/3 flex flex-col justify-center items-center mx-auto space-y-6 absolute bottom-32 left-4 lg:left-52">
+			<div className=" w-11/12 md:w-2/3 flex flex-col justify-center items-center mx-auto space-y-6 absolute bottom-12 lg:bottom-32 left-4 lg:left-52">
 				<h2 className="text-5xl font-semibold text-center text-gray-200">
 					Live <span className="text-[#94c341]">healthy</span> with a
 					glass of <span className="text-[#94c341]">fruit juice</span>{" "}
@@ -67,7 +72,7 @@ const Banner = () => {
 				<p className="text-sm font-medium text-[#94c341]">
 					Quebec brand who's mission is to promote outdoor living
 				</p>
-				<button className="btn bg-[#94c341] border-none">
+				<button onClick={handleMore} className="btn bg-[#94c341] border-none">
 					View More
 				</button>
 			</div>

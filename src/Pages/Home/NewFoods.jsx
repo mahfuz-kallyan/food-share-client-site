@@ -1,8 +1,13 @@
+import { toast } from 'react-toastify';
 import image1 from '../../assets/images/new1.jpg'
 import image2 from '../../assets/images/new2.jpg'
 import image3 from '../../assets/images/new3.jpg'
 
 const NewFoods = () => {
+
+	const handleWatch = () => {
+		toast.error('Nothing more to watch')
+	}
     return (
 		<div className="my-12 space-y-8 lg:p-14 relative mx-auto ">
 			<h2 className="text-4xl font-semibold text-center">Latest News</h2>
@@ -31,7 +36,10 @@ const NewFoods = () => {
 							</h2>
 							<p>Click the button to watch the news.</p>
 							<div className="card-actions justify-end">
-								<button className="btn bg-[#94c341] border-none text-gray-800">
+								<button
+									onClick={handleWatch}
+									className="btn bg-[#94c341] border-none text-gray-800"
+								>
 									Watch
 								</button>
 							</div>
@@ -51,7 +59,10 @@ const NewFoods = () => {
 							</h2>
 							<p>Click the button to watch the news.</p>
 							<div className="card-actions justify-end">
-								<button className="btn bg-[#94c341] border-none text-gray-800">
+								<button
+									onClick={handleWatch}
+									className="btn bg-[#94c341] border-none text-gray-800"
+								>
 									Watch
 								</button>
 							</div>
