@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const AddFoods = () => {
+	const navigate = useNavigate()
 
     const handleAddFood = (e) => {
         e.preventDefault();
@@ -26,6 +28,7 @@ const AddFoods = () => {
 						showConfirmButton: false,
 						timer: 1500,
 					});
+					navigate("/available");
                 }
 			});
     }
