@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const FeaturedFoods = () => {
 	const [foods, setFoods] = useState([]);
@@ -27,7 +27,9 @@ const FeaturedFoods = () => {
 				<div></div>
 				<div></div>
 				<div>
-					<button className="btn bg-[#94c341] ">Show All</button>
+					<Link to={"/available"}>
+						<button className="btn bg-[#94c341] ">Show All</button>
+					</Link>
 				</div>
 			</div>
 			<div className="mx-auto p-2 lg:p-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
