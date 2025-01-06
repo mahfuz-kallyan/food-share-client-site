@@ -35,7 +35,7 @@ const AddFoods = () => {
 
     return (
 		<div className="mx-auto">
-			<h2 className="text-4xl font-semibold text-center my-6">
+			<h2 className="text-4xl font-semibold text-center my-4 lg:mt-12">
 				Add Foods
 			</h2>
 			<div className="w-10/12 mx-auto">
@@ -48,7 +48,7 @@ const AddFoods = () => {
 							type="text"
 							placeholder="name"
 							name="name"
-							className="input input-bordered"
+							className="input input-bordered border-[#94c341]"
 							required
 						/>
 					</div>
@@ -60,7 +60,7 @@ const AddFoods = () => {
 							type="text"
 							placeholder="photo url"
 							name="photo"
-							className="input input-bordered"
+							className="input input-bordered border-[#94c341]"
 							required
 						/>
 					</div>
@@ -72,7 +72,7 @@ const AddFoods = () => {
 							type="text"
 							placeholder="quantity"
 							name="quantity"
-							className="input input-bordered"
+							className="input input-bordered border-[#94c341]"
 							required
 						/>
 					</div>
@@ -84,7 +84,7 @@ const AddFoods = () => {
 							type="text"
 							placeholder="location"
 							name="location"
-							className="input input-bordered"
+							className="input input-bordered border-[#94c341]"
 							required
 						/>
 					</div>
@@ -96,7 +96,7 @@ const AddFoods = () => {
 							type="text"
 							placeholder="status"
 							name="status"
-							className="input input-bordered"
+							className="input input-bordered border-[#94c341]"
 							required
 						/>
 					</div>
@@ -107,7 +107,7 @@ const AddFoods = () => {
 						<input
 							type="date"
 							name="expireDate"
-							className="input input-bordered"
+							className="input input-bordered border-[#94c341]"
 							required
 						/>
 					</div>
@@ -119,7 +119,7 @@ const AddFoods = () => {
 							type="text"
 							placeholder="donator name"
 							name="donator"
-							className="input input-bordered"
+							className="input input-bordered border-[#94c341]"
 							required
 						/>
 					</div>
@@ -131,7 +131,7 @@ const AddFoods = () => {
 							type="text"
 							placeholder="image"
 							name="image"
-							className="input input-bordered"
+							className="input input-bordered border-[#94c341]"
 							required
 						/>
 					</div>
@@ -143,7 +143,7 @@ const AddFoods = () => {
 							type="email"
 							placeholder="email"
 							name="email"
-							className="input input-bordered"
+							className="input input-bordered border-[#94c341]"
 							required
 						/>
 					</div>
@@ -152,13 +152,15 @@ const AddFoods = () => {
 							<span className="label-text">Additional notes</span>
 						</label>
 						<textarea
-							className="textarea textarea-bordered"
+							className="textarea textarea-bordered border-[#94c341]"
 							placeholder="notes"
 							name="notes"
 						></textarea>
 					</div>
 					<div className="form-control mt-6">
-						<button className="btn text-white text-lg bg-[#94c341]">Add Food</button>
+						<button className="btn text-white text-lg bg-[#94c341]">
+							Add Food
+						</button>
 					</div>
 				</form>
 			</div>
