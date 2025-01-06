@@ -18,11 +18,11 @@ const RequestFoods = () => {
 		},
 	});
 	return (
-		<div className="mx-auto mt-8">
+		<div className="mx-auto my-8">
 			<h2 className="text-4xl font-semibold text-center">
 				Request Foods
 			</h2>
-			<div className="p-2 lg:p-12">
+			<div className="p-2 lg:p-12 mt-4">
 				<div className="overflow-x-auto">
 					<table className="table">
 						{/* head */}
