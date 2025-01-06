@@ -29,11 +29,11 @@ const Details = () => {
 	};
 
 	return (
-		<div className="mx-auto space-y-12">
+		<div className="mx-auto space-y-12 px-6">
 			<h2 className="text-4xl font-semibold text-center my-8">
 				Food Details
 			</h2>
-			<div className="card card-compact bg-base-100 w-4/6 shadow-xl mx-auto">
+			<div className="card card-compact bg-base-100 lg:w-4/6 shadow-xl mx-auto">
 				<figure>
 					<img
 						className="aspect-[0.75] object-cover hover:scale-110 transition-all duration-500"
@@ -41,7 +41,7 @@ const Details = () => {
 						alt={name}
 					/>
 				</figure>
-				<div className="mt-3 flex justify-between items-center px-6">
+				<div className="mt-3 flex flex-col md:flex-row lg:flex-row justify-between items-center px-6">
 					<div className="flex items-center gap-2">
 						<img
 							className="w-16 rounded-lg"

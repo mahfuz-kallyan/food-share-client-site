@@ -19,7 +19,7 @@ const FoodsCard = ({ food }) => {
     }
 
 	return (
-		<div>
+		<div className="flex flex-col justify-center items-center">
 			<div className="card card-compact bg-base-100 w-96 shadow-xl">
 				<figure>
 					<img
