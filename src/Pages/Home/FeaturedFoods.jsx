@@ -1,9 +1,82 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const FeaturedFoods = () => {
+	const [foods, setFoods] = useState([]);
+	const navigate = useNavigate()
+	
+
+	useEffect(() => {
+		fetch("http://localhost:5000/featured")
+			.then(res => res.json())
+			.then(data => setFoods(data))
+		.catch(err => console.log(err)
+		)
+	}, [])
+
+	 const handleDetails = () => {
+			navigate(`/details/${_id}`);
+		};
+
     return (
-		<div className='mx-auto py-14'>
-			<h2 className='text-4xl font-semibold text-center'>Featured Foods</h2>
+		<div className="mx-auto py-14">
+			<h2 className="text-4xl font-semibold text-center">
+				Featured Foods
+			</h2>
+			<div className='mx-auto p-2 lg:p-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+				{foods.map((food) => (
+					<div className="card card-compact bg-base-100 w-96 shadow-xl">
+						<figure>
+							<img
+								className="w-96 aspect-[0.75] object-cover hover:scale-110 transition-all duration-500"
+								src={food.photo}
+								alt="Food Image"
+							/>
+						</figure>
+						<div className="card-body space-y-2">
+							<h2 className="card-title">{food.name}</h2>
+							<p className="text-xl font-medium">
+								Notes:{" "}
+								<span className="text-[#94c341] font-semibold">
+									{food.notes}
+								</span>
+							</p>
+							<p className="text-xl font-medium">
+								Quantity:{" "}
+								<span className="text-[#94c341] font-semibold">
+									{food.quantity}
+								</span>
+							</p>
+							<p className="text-xl font-medium">
+								PickUp Location:{" "}
+								<span className="text-[#94c341] font-semibold">
+									{food.location}
+								</span>
+							</p>
+							<p className="text-xl font-medium">
+								Date:{" "}
+								<span className="text-[#94c341] font-semibold">
+									{food.expireDate}
+								</span>
+							</p>
+							<p className="text-xl font-medium">
+								Food Status:{" "}
+								<span className="text-[rgb(148,195,65)] font-semibold">
+									{food.status}
+								</span>
+							</p>
+							<div className="card-actions justify-center py-3">
+								<button
+									onClick={handleDetails}
+									className="btn bg-[#94c341]"
+								>
+									View Details
+								</button>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
 		</div>
 	);
 };
