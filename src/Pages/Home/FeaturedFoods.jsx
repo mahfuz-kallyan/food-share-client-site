@@ -19,11 +19,18 @@ const FeaturedFoods = () => {
 		};
 
     return (
-		<div className="mx-auto py-14">
+		<div className="mx-auto py-14 flex flex-col justify-center">
 			<h2 className="text-4xl font-semibold text-center">
 				Featured Foods
 			</h2>
-			<div className='mx-auto p-2 lg:p-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+			<div className=" px-2 lg:px-14 flex justify-between items-center my-6">
+				<div></div>
+				<div></div>
+				<div>
+					<button className="btn bg-[#94c341] ">Show All</button>
+				</div>
+			</div>
+			<div className="mx-auto p-2 lg:p-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{foods.map((food) => (
 					<div className="card card-compact bg-base-100 w-96 shadow-xl">
 						<figure>
