@@ -72,7 +72,10 @@ const Banner = () => {
 				<p className="text-sm font-medium text-[#94c341]">
 					Quebec brand who's mission is to promote outdoor living
 				</p>
-				<button onClick={handleMore} className="btn bg-[#94c341] border-none">
+				<button
+					onClick={handleMore}
+					className="btn bg-[#94c341] border-none"
+				>
 					View More
 				</button>
 			</div>

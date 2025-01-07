@@ -7,14 +7,12 @@ import AuthContext from "../Context/AuthContext/AuthContext";
 const RequestFoods = () => {
     const {user} = useContext(AuthContext)
     const { data: requestedFood = [] } = useQuery({
-		queryKey: ["requestedFood"],
+		queryKey: ["requestedFood", user.email],
 		queryFn: async () => {
 			const res = await axios.get(
 				`http://localhost:5000/requested/${user.email}`
 			);
 			return res.data;
-			console.log(requestedFood);
-			
 		},
 	});
 	return (
