@@ -20,7 +20,7 @@ const FoodsCard = ({ food }) => {
 
 	return (
 		<div className="flex flex-col justify-center items-center">
-			<div className="card card-compact bg-base-100 w-96 shadow-xl">
+			<div className="card card-compact bg-base-100  shadow-xl">
 				<figure>
 					<img
 						className="w-96 aspect-[0.75] object-cover hover:scale-110 transition-all duration-500"
