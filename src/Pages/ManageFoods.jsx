@@ -11,7 +11,9 @@ const ManageFoods = () => {
     const { data: myFoods = []} = useQuery({
         queryKey: ["manageFoods", user.email],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/manage-foods/${user.email}`);
+            const res = await axios.get(
+				`https://food-share-server-jade.vercel.app/manage-foods/${user.email}`
+			);
             return res.data;
         }
         
@@ -21,7 +23,7 @@ const ManageFoods = () => {
         const data = {
             status: e.target.value
         }
-        fetch(`http://localhost:5000/manage-foods/${id}`, {
+        fetch(`https://food-share-server-jade.vercel.app/manage-foods/${id}`, {
 			method: "PATCH",
 			headers: {
 				"content-type": "application/json",
@@ -30,13 +32,11 @@ const ManageFoods = () => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-                if (data.modifiedCount) {
-                   toast.success('Updated Status Successfully')
-               }
-                
-            })
-        .catch(error => console.log(error)
-        )  
+				if (data.modifiedCount) {
+					toast.success("Updated Status Successfully");
+				}
+			})
+			.catch((error) => console.log(error));  
     }
 
     const handleDelete = (id) => {
@@ -51,19 +51,22 @@ const ManageFoods = () => {
 		}).then((result) => {
 			if (result.isConfirmed) {
 		
-                fetch(`http://localhost:5000/manage-foods/${id}`, {
-                    method: 'DELETE'
-                })
+                fetch(
+					`https://food-share-server-jade.vercel.app/manage-foods/${id}`,
+					{
+						method: "DELETE",
+					}
+				)
 					.then((res) => res.json())
 					.then((data) => {
-                        console.log(data);
-                        if (data.deletedCount > 0) {
-                           Swal.fire({
+						console.log(data);
+						if (data.deletedCount > 0) {
+							Swal.fire({
 								title: "Deleted!",
 								text: "Your file has been deleted.",
 								icon: "success",
-                           });
-                        }
+							});
+						}
 					})
 					.catch((error) => console.log(error));
             }

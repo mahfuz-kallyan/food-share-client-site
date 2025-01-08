@@ -6,11 +6,10 @@ const FeaturedFoods = () => {
 	
 
 	useEffect(() => {
-		fetch("http://localhost:5000/featured")
-			.then(res => res.json())
-			.then(data => setFoods(data))
-		.catch(err => console.log(err)
-		)
+		fetch("https://food-share-server-jade.vercel.app/featured")
+			.then((res) => res.json())
+			.then((data) => setFoods(data))
+			.catch((err) => console.log(err));
 	}, [])
 
 

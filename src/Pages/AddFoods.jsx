@@ -12,7 +12,7 @@ const AddFoods = () => {
         const formData = new FormData(e.target);
         const initialData = Object.fromEntries(formData.entries());
         
-        fetch("http://localhost:5000/foods", {
+        fetch("https://food-share-server-jade.vercel.app/foods", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -21,8 +21,8 @@ const AddFoods = () => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-                if (data.insertedId) {
-                    Swal.fire({
+				if (data.insertedId) {
+					Swal.fire({
 						position: "top-end",
 						icon: "success",
 						title: "Added Food Successfully",
@@ -30,7 +30,7 @@ const AddFoods = () => {
 						timer: 1500,
 					});
 					navigate("/manageFoods");
-                }
+				}
 			});
     }
 

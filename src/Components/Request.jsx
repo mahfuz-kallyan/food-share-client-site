@@ -17,16 +17,19 @@ const RequestModal = ({ food, closeModal }) => {
 			requestDate,
         };
         
-        axios.put(`http://localhost:5000/foods/${_id}`, requestData)
-            .then(res => {
-                if (res.data.insertedId) {
-                toast.success('Request sent');
-                }
-                
-            })
-            .catch(err => {
-            toast.error('Something went wrong')
-        })
+        axios
+			.put(
+				`https://food-share-server-jade.vercel.app/foods/${_id}`,
+				requestData
+			)
+			.then((res) => {
+				if (res.data.insertedId) {
+					toast.success("Request sent");
+				}
+			})
+			.catch((err) => {
+				toast.error("Something went wrong");
+			});
 
 		console.log("Request Submitted:", requestData);
 		closeModal();

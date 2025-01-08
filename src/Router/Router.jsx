@@ -24,13 +24,16 @@ const router = createBrowserRouter([
 			{
 				path: "/available",
 				element: <AvailableFoods></AvailableFoods>,
-				loader: () => fetch("http://localhost:5000/foods"),
+				loader: () =>
+					fetch("https://food-share-server-jade.vercel.app/foods"),
 			},
 			{
 				path: "/details/:id",
 				element: <Details></Details>,
 				loader: async ({ params }) => {
-					const res = await fetch("http://localhost:5000/foods");
+					const res = await fetch(
+						"https://food-share-server-jade.vercel.app/foods"
+					);
 					const data = await res.json();
 					return data?.find((item) => item?._id === params.id);
 				},
@@ -53,7 +56,11 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/manageFoods",
-				element: <PrivateRoute><ManageFoods></ManageFoods></PrivateRoute>
+				element: (
+					<PrivateRoute>
+						<ManageFoods></ManageFoods>
+					</PrivateRoute>
+				),
 			},
 			{
 				path: "/login",

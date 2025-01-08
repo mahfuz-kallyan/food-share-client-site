@@ -10,7 +10,7 @@ const RequestFoods = () => {
 		queryKey: ["requestedFood", user.email],
 		queryFn: async () => {
 			const res = await axios.get(
-				`http://localhost:5000/requested/${user.email}`
+				`https://food-share-server-jade.vercel.app/requested/${user.email}`
 			);
 			return res.data;
 		},
