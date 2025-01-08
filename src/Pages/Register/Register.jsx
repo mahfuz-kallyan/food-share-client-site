@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import registerLottie from "../../assets/Lottie/Animation - 1734354078331.json";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useContext, useState } from "react";
 import AuthContext from "../../Context/AuthContext/AuthContext";
@@ -8,6 +8,9 @@ import AuthContext from "../../Context/AuthContext/AuthContext";
 const Register = () => {
 	const [error, setError] = useState({});
 	const { createUser, signInWithGoogle } = useContext(AuthContext);
+	const navigate = useNavigate()
+
+	const from = location?.state || "/";
 
 	const handleRegister = (e) => {
 		e.preventDefault();
@@ -37,6 +40,7 @@ const Register = () => {
 		createUser(email, password)
 			.then((result) => {
 				console.log(result.user);
+				navigate(from)
 			})
 			.catch((err) => {
 				console.log(err.message);
