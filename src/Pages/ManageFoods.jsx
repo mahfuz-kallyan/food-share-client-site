@@ -1,11 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import AuthContext from '../Context/AuthContext/AuthContext';
 import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const ManageFoods = () => {
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     const { data: myFoods = []} = useQuery({
         queryKey: ["manageFoods", user.email],
@@ -17,7 +18,6 @@ const ManageFoods = () => {
     })
 
     const handleStatus = (e, id) => {
-       console.log(e.target.value, id);
         const data = {
             status: e.target.value
         }
@@ -36,7 +36,38 @@ const ManageFoods = () => {
                 
             })
         .catch(error => console.log(error)
-        )
+        )  
+    }
+
+    const handleDelete = (id) => {
+		Swal.fire({
+			title: "Are you sure?",
+			text: "You won't be able to revert this!",
+			icon: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#3085d6",
+			cancelButtonColor: "#d33",
+			confirmButtonText: "Yes, delete it!",
+		}).then((result) => {
+			if (result.isConfirmed) {
+		
+                fetch(`http://localhost:5000/manage-foods/${id}`, {
+                    method: 'DELETE'
+                })
+					.then((res) => res.json())
+					.then((data) => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                           Swal.fire({
+								title: "Deleted!",
+								text: "Your file has been deleted.",
+								icon: "success",
+                           });
+                        }
+					})
+					.catch((error) => console.log(error));
+            }
+		});
         
     }
     return (
@@ -78,7 +109,7 @@ const ManageFoods = () => {
 										</select>
 									</td>
 									<td>
-										<button className="btn btn-neutral">
+										<button onClick={()=> handleDelete(food._id)} className="btn btn-neutral">
 											Delete
 										</button>
 									</td>

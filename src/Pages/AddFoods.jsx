@@ -11,7 +11,6 @@ const AddFoods = () => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const initialData = Object.fromEntries(formData.entries());
-        console.log(initialData);
         
         fetch("http://localhost:5000/foods", {
 			method: "POST",
