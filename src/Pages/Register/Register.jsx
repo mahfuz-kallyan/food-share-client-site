@@ -40,7 +40,7 @@ const Register = () => {
 		createUser(email, password)
 			.then((result) => {
 				console.log(result.user);
-				navigate(from)
+				navigate("/")
 			})
 			.catch((err) => {
 				console.log(err.message);
