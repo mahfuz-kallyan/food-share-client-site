@@ -52,6 +52,7 @@ const Register = () => {
 		signInWithGoogle()
 			.then((result) => {
 				console.log(result.user);
+				navigate(from);
 			})
 			.catch((err) => {
 				console.log(err.message);
