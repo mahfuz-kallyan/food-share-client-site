@@ -69,7 +69,7 @@ const Navbar = () => {
 						</ul>
 					</div>
 					<a className="text-white text-3xl font-semibold">
-						Organic<span className="text-gray-700">Food</span>
+						Food<span className="text-gray-700">Share</span>
 					</a>
 				</div>
 				<div className="navbar-center hidden lg:flex">
