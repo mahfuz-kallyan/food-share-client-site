@@ -4,11 +4,12 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useContext, useState } from "react";
 import AuthContext from "../../Context/AuthContext/AuthContext";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
 	const [error, setError] = useState({});
 	const { createUser, signInWithGoogle } = useContext(AuthContext);
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 
 	const from = location?.state || "/";
 
@@ -40,12 +41,11 @@ const Register = () => {
 		createUser(email, password)
 			.then((result) => {
 				console.log(result.user);
-				navigate("/")
+				navigate("/");
 			})
 			.catch((err) => {
 				console.log(err.message);
 			});
-
 	};
 
 	const handleGoogle = () => {
@@ -61,6 +61,9 @@ const Register = () => {
 
 	return (
 		<div className="hero bg-base-200 min-h-screen py-4">
+			<Helmet>
+				<title>Register | FoodShare</title>
+			</Helmet>
 			<div className="hero-content flex-col lg:flex-row-reverse">
 				<div className="text-center lg:text-left w-[500px]">
 					<Lottie animationData={registerLottie}></Lottie>
@@ -133,7 +136,10 @@ const Register = () => {
 						</NavLink>
 					</p>
 					<p className="p-4">
-						<button onClick={handleGoogle} className="btn btn-ghost">
+						<button
+							onClick={handleGoogle}
+							className="btn btn-ghost"
+						>
 							Sign in with Google
 						</button>
 					</p>

@@ -1,18 +1,19 @@
-import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
-import AuthContext from '../Context/AuthContext/AuthContext';
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import AuthContext from "../Context/AuthContext/AuthContext";
+import { Helmet } from "react-helmet-async";
 
 const AddFoods = () => {
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 	const { user } = useContext(AuthContext);
 
-    const handleAddFood = (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const initialData = Object.fromEntries(formData.entries());
-        
-        fetch("https://food-share-server-jade.vercel.app/foods", {
+	const handleAddFood = (e) => {
+		e.preventDefault();
+		const formData = new FormData(e.target);
+		const initialData = Object.fromEntries(formData.entries());
+
+		fetch("https://food-share-server-jade.vercel.app/foods", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -32,10 +33,13 @@ const AddFoods = () => {
 					navigate("/manageFoods");
 				}
 			});
-    }
+	};
 
-    return (
+	return (
 		<div className="mx-auto">
+			<Helmet>
+				<title>Add Food | FoodShare</title>
+			</Helmet>
 			<h2 className="text-4xl font-semibold text-center my-4 lg:mt-12">
 				Add Foods
 			</h2>
@@ -141,7 +145,8 @@ const AddFoods = () => {
 							<span className="label-text">Donator Email</span>
 						</label>
 						<input
-							type="email" defaultValue={user?.email}
+							type="email"
+							defaultValue={user?.email}
 							placeholder="email"
 							name="email"
 							className="input input-bordered border-[#94c341]"

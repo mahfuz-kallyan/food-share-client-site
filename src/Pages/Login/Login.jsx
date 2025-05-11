@@ -3,6 +3,7 @@ import loginLottie from "../../assets/Lottie/Animation - 1734342812159.json";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../../Context/AuthContext/AuthContext";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -18,7 +19,7 @@ const Login = () => {
 		const form = e.target;
 		const email = form.email.value;
 		const password = form.password.value;
-		console.log({ email, password });
+		
 
 		logInUser(email, password)
 			.then(result => {
@@ -45,6 +46,11 @@ const Login = () => {
 
 	return (
 		<div className="hero bg-base-200 min-h-screen">
+			<Helmet>
+				<title>
+					Login | FoodShare
+				</title>
+			</Helmet>
 			<div className="hero-content flex-col lg:flex-row-reverse">
 				<div className="text-center lg:text-left w-96">
 					<Lottie animationData={loginLottie}></Lottie>

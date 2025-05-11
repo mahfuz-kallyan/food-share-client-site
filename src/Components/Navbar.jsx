@@ -79,7 +79,7 @@ const Navbar = () => {
 					{user && (
 						<div className="mb-2">
 							<img
-								className="w-12 h-12 rounded-full mb-2 relative translate-y-1"
+								className="w-12 h-12 rounded-full relative translate-y-1"
 								src={user?.photoURL}
 								alt="User Photo"
 							/>

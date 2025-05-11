@@ -19,8 +19,7 @@ const FoodsCard = ({ food }) => {
     }
 
 	return (
-		<div className="flex flex-col justify-center items-center">
-			<div className="card card-compact bg-base-100  shadow-xl">
+			<div className="card card-compact bg-base-100  shadow-2xl">
 				<figure>
 					<img
 						className="w-96 aspect-[0.75] object-cover hover:scale-110 transition-all duration-500"
@@ -61,13 +60,16 @@ const FoodsCard = ({ food }) => {
 						</span>
 					</p>
 					<div className="card-actions justify-center py-3">
-						<button onClick={handleDetails} className="btn bg-[#94c341]">
+						<button
+							onClick={handleDetails}
+							className="btn bg-[#94c341]"
+						>
 							View Details
 						</button>
 					</div>
 				</div>
 			</div>
-		</div>
+		
 	);
 };
 

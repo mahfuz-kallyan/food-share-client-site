@@ -2,11 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React, { useContext } from "react";
 import AuthContext from "../Context/AuthContext/AuthContext";
-
+import { Helmet } from "react-helmet-async";
 
 const RequestFoods = () => {
-    const {user} = useContext(AuthContext)
-    const { data: requestedFood = [] } = useQuery({
+	const { user } = useContext(AuthContext);
+	const { data: requestedFood = [] } = useQuery({
 		queryKey: ["requestedFood", user.email],
 		queryFn: async () => {
 			const res = await axios.get(
@@ -17,6 +17,9 @@ const RequestFoods = () => {
 	});
 	return (
 		<div className="mx-auto my-8">
+			<Helmet>
+				<title>Request | FoodShare</title>
+			</Helmet>
 			<h2 className="text-4xl font-semibold text-center">
 				Request Foods
 			</h2>

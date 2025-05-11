@@ -1,12 +1,14 @@
 import { useLoaderData } from "react-router-dom";
 import FoodsCard from "../Components/FoodsCard";
-
-
+import { Helmet } from "react-helmet-async";
 
 const AvailableFoods = () => {
-    const foods = useLoaderData()
-    return (
+	const foods = useLoaderData();
+	return (
 		<div className="mx-auto">
+			<Helmet>
+				<title>All Foods | FoodShare | FoodShare</title>
+			</Helmet>
 			<h2 className="text-4xl font-semibold my-8 text-center">
 				Available foods
 			</h2>

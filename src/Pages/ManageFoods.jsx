@@ -1,29 +1,28 @@
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import React, { useContext, useState } from 'react';
-import AuthContext from '../Context/AuthContext/AuthContext';
-import { toast } from 'react-toastify';
-import Swal from 'sweetalert2';
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import React, { useContext, useState } from "react";
+import AuthContext from "../Context/AuthContext/AuthContext";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const ManageFoods = () => {
-    const { user } = useContext(AuthContext)
+	const { user } = useContext(AuthContext);
 
-    const { data: myFoods = []} = useQuery({
-        queryKey: ["manageFoods", user.email],
-        queryFn: async () => {
-            const res = await axios.get(
+	const { data: myFoods = [] } = useQuery({
+		queryKey: ["manageFoods", user.email],
+		queryFn: async () => {
+			const res = await axios.get(
 				`https://food-share-server-jade.vercel.app/manage-foods/${user.email}`
 			);
-            return res.data;
-        }
-        
-    })
+			return res.data;
+		},
+	});
 
-    const handleStatus = (e, id) => {
-        const data = {
-            status: e.target.value
-        }
-        fetch(`https://food-share-server-jade.vercel.app/manage-foods/${id}`, {
+	const handleStatus = (e, id) => {
+		const data = {
+			status: e.target.value,
+		};
+		fetch(`https://food-share-server-jade.vercel.app/manage-foods/${id}`, {
 			method: "PATCH",
 			headers: {
 				"content-type": "application/json",
@@ -36,10 +35,10 @@ const ManageFoods = () => {
 					toast.success("Updated Status Successfully");
 				}
 			})
-			.catch((error) => console.log(error));  
-    }
+			.catch((error) => console.log(error));
+	};
 
-    const handleDelete = (id) => {
+	const handleDelete = (id) => {
 		Swal.fire({
 			title: "Are you sure?",
 			text: "You won't be able to revert this!",
@@ -50,8 +49,7 @@ const ManageFoods = () => {
 			confirmButtonText: "Yes, delete it!",
 		}).then((result) => {
 			if (result.isConfirmed) {
-		
-                fetch(
+				fetch(
 					`https://food-share-server-jade.vercel.app/manage-foods/${id}`,
 					{
 						method: "DELETE",
@@ -69,12 +67,14 @@ const ManageFoods = () => {
 						}
 					})
 					.catch((error) => console.log(error));
-            }
+			}
 		});
-        
-    }
-    return (
+	};
+	return (
 		<div className="mx-auto my-8">
+			<Helmet>
+				<title>Manage | FoodShare</title>
+			</Helmet>
 			<h2 className="text-4xl font-semibold text-center">Manage Foods</h2>
 			<div className="p-2 lg:p-12 mt-4">
 				<div className="overflow-x-auto">
@@ -98,7 +98,9 @@ const ManageFoods = () => {
 									<td>{food.status}</td>
 									<td>
 										<select
-											onChange={(e) => handleStatus(e, food._id)}
+											onChange={(e) =>
+												handleStatus(e, food._id)
+											}
 											defaultValue={
 												food.status || "Change Status"
 											}
@@ -112,7 +114,12 @@ const ManageFoods = () => {
 										</select>
 									</td>
 									<td>
-										<button onClick={()=> handleDelete(food._id)} className="btn btn-neutral">
+										<button
+											onClick={() =>
+												handleDelete(food._id)
+											}
+											className="btn btn-neutral"
+										>
 											Delete
 										</button>
 									</td>
