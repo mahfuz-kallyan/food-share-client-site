@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import FeaturedFoods from "./FeaturedFoods";
 import NewFoods from "./NewFoods";
 import Subscribe from "./Subscribe";
+import Recipe from "./Recipe";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <Banner></Banner>
             <FeaturedFoods></FeaturedFoods>
             <NewFoods></NewFoods>
+            <Recipe></Recipe>
             <Subscribe></Subscribe>
         </div>
     );
