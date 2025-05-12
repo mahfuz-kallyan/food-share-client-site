@@ -38,7 +38,7 @@ const Navbar = () => {
 
 	return (
 		<div>
-			<div className="navbar bg-[#94c341] p-2 lg:p-8">
+			<div className="navbar bg-[#94c341] fixed top-0 z-50 p-2 lg:p-8">
 				<div className="navbar-start">
 					<div className="dropdown">
 						<div
@@ -76,6 +76,13 @@ const Navbar = () => {
 					<ul className="menu menu-horizontal px-1">{links}</ul>
 				</div>
 				<div className="navbar-end gap-2">
+					<div>
+						<input
+							type="checkbox"
+							value="dark"
+							className="toggle theme-controller"
+						/>
+					</div>
 					{user && (
 						<div className="mb-2">
 							<img

@@ -20,6 +20,7 @@ const Register = () => {
 		const email = form.email.value;
 		const photo = form.photo.value;
 		const password = form.password.value;
+		
 		// password validation
 		const validatePassword = (password) => {
 			const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
