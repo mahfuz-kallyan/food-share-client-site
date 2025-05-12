@@ -29,12 +29,12 @@ const FeaturedFoods = () => {
 					</Link>
 				</div>
 			</div>
-			<div className="mx-auto p-2 lg:p-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			<div className="mx-auto p-2 lg:p-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{foods.map((food) => (
-					<div className="card card-compact bg-base-100 shadow-xl">
+					<div className="card card-compact bg-base-100 shadow-xl w-96 h-auto">
 						<figure>
 							<img
-								className="w-96 aspect-[0.75] object-cover hover:scale-110 transition-all duration-500"
+								className=" aspect-[0.75] object-cover hover:scale-110 transition-all duration-500"
 								src={food.photo}
 								alt="Food Image"
 							/>
