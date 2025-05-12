@@ -4,6 +4,7 @@ import FeaturedFoods from "./FeaturedFoods";
 import NewFoods from "./NewFoods";
 import Subscribe from "./Subscribe";
 import Recipe from "./Recipe";
+import AddPost from "./AddPost";
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
             <FeaturedFoods></FeaturedFoods>
             <NewFoods></NewFoods>
             <Recipe></Recipe>
+            <AddPost></AddPost>
             <Subscribe></Subscribe>
         </div>
     );
