@@ -12,7 +12,7 @@ const NewFoods = () => {
 		<div className="my-12 space-y-8 lg:p-14 relative mx-auto ">
 			<h2 className="text-4xl font-semibold text-center">Latest News</h2>
 			<div className="flex gap-8 flex-col lg:flex-row justify-center items-center">
-				<div className="p-6 lg:w-1/2 relative">
+				<div className="p-6 lg:p-2 lg:w-1/2 relative">
 					<img className="rounded-2xl" src={image2} alt="" />
 					<div className="absolute left-12 bottom-10   lg:bottom-8 lg:left-14">
 						<h3 className="text-2xl font-medium text-[#94c341]">

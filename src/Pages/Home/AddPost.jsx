@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 
 
 const AddPost = () => {
@@ -14,9 +16,11 @@ const AddPost = () => {
 				</h5>
 			</div>
 			<div className="p-6">
-				<button className="btn text-gray-800 bg-[#94c341] border-none ">
-					Add Foods
-				</button>
+				<Link to={"/addFood"}>
+					<button className="btn text-gray-800 bg-[#94c341] border-none ">
+						Add Foods
+					</button>
+				</Link>
 			</div>
 		</div>
 	);
