@@ -63,7 +63,7 @@ const Banner = () => {
 					</div>
 				</div>
 			</div>
-			<div className=" w-11/12 md:w-2/3 flex flex-col justify-center items-center mx-auto space-y-6 absolute bottom-12 lg:bottom-32 left-4 lg:left-52">
+			<div className=" w-11/12 md:w-2/3 flex flex-col justify-center items-center mx-auto space-y-6 absolute bottom-12 left-4  md:bottom-28 md:left-40 lg:bottom-48 lg:left-52">
 				<h2 className="text-5xl font-semibold text-center text-gray-200">
 					Live <span className="text-[#94c341]">healthy</span> with a
 					glass of <span className="text-[#94c341]">fruit juice</span>{" "}
