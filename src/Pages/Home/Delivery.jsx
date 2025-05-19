@@ -4,7 +4,7 @@ import deliverLottie from '../../assets/Lottie/Animation - 1747036207150.json'
 const Delivery = () => {
     return (
 		<div className="flex flex-col-reverse lg:flex-row justify-center items-center p-6 lg:p-14 gap-2 lg:gap-8">
-			<div className="w-[500px]">
+			<div className="w-200px md:w-[500px]">
 				<Lottie animationData={deliverLottie}></Lottie>
 			</div>
 			<div className="space-y-2">

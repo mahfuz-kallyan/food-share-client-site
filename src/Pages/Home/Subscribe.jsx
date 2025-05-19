@@ -14,7 +14,7 @@ const Subscribe = () => {
 						backgroundImage:
 							"url(https://i.ibb.co.com/ySsGLpc/bg-shadow.png)",
 					}}
-					className="space-y-5 p-14 border-2 w-5/6 rounded-2xl backdrop-filter backdrop-blur-sm bg-[#94c341]"
+					className="space-y-5 p-4 md:p-14 border-2 w-5/6 rounded-2xl backdrop-filter backdrop-blur-sm bg-[#94c341]"
 				>
 					<h2 className="text-2xl font-bold text-center">
 						Subscribe to our Newsletter

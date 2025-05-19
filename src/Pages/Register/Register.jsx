@@ -66,7 +66,7 @@ const Register = () => {
 				<title>Register | FoodShare</title>
 			</Helmet>
 			<div className="hero-content flex-col lg:flex-row-reverse">
-				<div className="text-center lg:text-left w-[500px]">
+				<div className="text-center lg:text-left w-70 md:w-[500px]">
 					<Lottie animationData={registerLottie}></Lottie>
 				</div>
 				<div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

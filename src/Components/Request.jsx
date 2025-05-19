@@ -9,7 +9,11 @@ const RequestModal = ({ food, closeModal }) => {
 	const [notes, setNotes] = useState("");
 	const [requestDate] = useState(new Date().toLocaleString());
 
-    const  handleSubmit = async() => {
+	const handleSubmit = async () => {
+		if (!user) {
+			toast.error("Please login first");
+			return;
+		}
 
 		const requestData = {
 			userEmail: user.email,

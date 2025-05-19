@@ -37,9 +37,9 @@ const Navbar = () => {
 	);
 
 	return (
-		<div className= " bg-[#94c341] lg:px-4 py-2 sticky top-0 z-50">
-			<div className="navbar">
-				<div className="navbar-start">
+		<div className=" bg-[#94c341] lg:px-4 py-2 sticky top-0 z-50">
+			<div className="navbar flex flex-col md:flex-row justify-between justify-items-center">
+				<div>
 					<div className="dropdown">
 						<div
 							tabIndex={0}
@@ -75,7 +75,7 @@ const Navbar = () => {
 				<div className="navbar-center hidden lg:flex">
 					<ul className="menu menu-horizontal px-1">{links}</ul>
 				</div>
-				<div className="navbar-end gap-2">
+				<div className="gap-2">
 					<div>
 						<input
 							type="checkbox"
