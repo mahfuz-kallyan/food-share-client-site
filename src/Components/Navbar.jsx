@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../Context/AuthContext/AuthContext";
+import image from '../assets/icons/icons8-cute-pumpkin-48.png'
 
 const Navbar = () => {
 	const { user, signOutUser } = useContext(AuthContext);
@@ -38,7 +39,7 @@ const Navbar = () => {
 
 	return (
 		<div className=" bg-[#94c341] lg:px-4 py-2 sticky top-0 z-50">
-			<div className="navbar flex flex-col md:flex-row justify-between justify-items-center">
+			<div className="navbar flex flex-col md:flex-row justify-between justify-items-center gap-2">
 				<div>
 					<div className="dropdown">
 						<div
@@ -68,9 +69,12 @@ const Navbar = () => {
 							{links}
 						</ul>
 					</div>
-					<a className="text-white text-3xl font-semibold">
-						Food<span className="text-gray-700">Share</span>
-					</a>
+					<div className="flex justify-center items-center">
+						<img src={image} alt="" />
+						<a className="text-white text-3xl font-semibold">
+							Food<span className="text-gray-700">Share</span>
+						</a>
+					</div>
 				</div>
 				<div className="navbar-center hidden lg:flex">
 					<ul className="menu menu-horizontal px-1">{links}</ul>
